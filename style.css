@@ -1,0 +1,115 @@
+/* Cores de Destaque */
+:root {
+    --color-cyan: #00ffc3;
+    --color-magenta: #ff00f7;
+    --bg-dark-start: #1b1b1b;
+    --bg-dark-end: #0e0e0e;
+}
+
+/* Estilos Globais e Fundo Futurista */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Gradiente escuro sutil para o fundo */
+    background: linear-gradient(135deg, var(--bg-dark-start) 0%, var(--bg-dark-end) 100%);
+    color: #d1d1d1; /* Cor de texto padrão clara */
+    overflow-x: hidden; /* Evita rolagem horizontal devido aos orbes */
+    padding-bottom: 50px; /* Garante espaço no final */
+}
+
+/* Efeitos de Esfera (Blurry Orbs) */
+.orb {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.6;
+    z-index: -1;
+    animation: pulse 15s infinite alternate;
+}
+
+.orb.cyan {
+    background-color: var(--color-cyan);
+    top: 5%;
+    left: -10%;
+    animation-duration: 18s;
+}
+
+.orb.magenta {
+    background-color: var(--color-magenta);
+    bottom: 10%;
+    right: -10%;
+    animation-duration: 15s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Efeito Glassmorphism para seções de conteúdo e header */
+.glassmorphism {
+    background: rgba(30, 30, 30, 0.4); /* Fundo semi-transparente escuro */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Estilo para Títulos e Destaques */
+.text-cyan { color: var(--color-cyan); }
+.text-magenta { color: var(--color-magenta); }
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-magenta);
+    text-shadow: 0 0 10px rgba(255, 0, 247, 0.5); /* Sombra neon magenta para títulos */
+}
+
+/* Estilo Futurista para Botões */
+.futuristic-button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--color-cyan);
+    color: var(--color-cyan);
+    background: rgba(0, 255, 195, 0.05); /* Cian transparente */
+}
+
+.futuristic-button:hover {
+    color: var(--bg-dark-end);
+    background: var(--color-cyan);
+    box-shadow: 0 0 15px var(--color-cyan), 0 0 25px var(--color-cyan); /* Sombra neon ciano no hover */
+    transform: translateY(-2px);
+}
+
+.futuristic-button.active-filter {
+    background: var(--color-cyan);
+    color: var(--bg-dark-end);
+    box-shadow: 0 0 15px var(--color-cyan);
+}
+
+/* Estilo para Links de Navegação */
+.nav-link {
+    color: var(--color-cyan);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    color: white;
+    text-shadow: 0 0 10px var(--color-cyan);
+}
+
+/* Estilo de Destaque para Habilidades Filtradas */
+#listaHabilidades li {
+    background-color: rgba(30, 30, 30, 0.5); /* Fundo escuro sutil para itens */
+}
+.bg-cyan-highlight {
+    background-color: rgba(0, 255, 195, 0.2) !important; /* Ciano transparente para destaque */
+    border-color: var(--color-cyan) !important;
+}
