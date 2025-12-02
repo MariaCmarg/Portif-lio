@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Maria Clara Camargos - Dark Futurista</title>
+    
+    <!-- Carrega Tailwind CSS para utilitários de estilo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega a fonte Poppins do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Ícone Lucide para botões e detalhes -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Link para o arquivo CSS personalizado (style.css) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+    <!-- Efeitos de Esfera Blur - Cyan e Magenta (Definidos no CSS) -->
+    <div class="orb cyan"></div>
+    <div class="orb magenta"></div>
+
+    <!-- Estrutura de Modal (Simulação) -->
+    <div id="simulation-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none z-50">
+        <div class="glassmorphism p-8 rounded-xl max-w-sm w-full text-center border-4 border-cyan-500/50">
+            <h3 id="modal-title" class="text-2xl font-bold text-cyan mb-4"></h3>
+            <p id="modal-message" class="text-gray-300 mb-6"></p>
+            <button onclick="document.getElementById('simulation-modal').classList.remove('opacity-100', 'pointer-events-auto');" class="futuristic-button px-6 py-2 rounded text-sm">
+                Fechar Simulação
+            </button>
+        </div>
+    </div>
+
+    <!-- Container Principal Centrado -->
+    <main class="mx-auto w-[90%] max-w-[1100px] py-10 space-y-16">
+        
+        <!-- HEADER e NAVEGAÇÃO -->
+        <header class="glassmorphism p-6 rounded-xl flex flex-col md:flex-row justify-between items-center z-10 sticky top-0 bg-opacity-70">
+            <h1 id="bemVindoTitulo" class="text-3xl font-bold text-magenta transition-colors duration-500">
+                Portfólio de Maria Clara Camargos
+                
+            </h1>
+            <nav class="mt-4 md:mt-0">
+                <ul class="flex space-x-4 sm:space-x-8">
+                    <li><a href="#sobreMim" class="nav-link">Sobre Mim</a></li>
+                    <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                    <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- SEÇÃO 1: SOBRE MIM -->
+        <section id="sobreMim" class="content-section glassmorphism p-8 rounded-xl">
+            <h2 class="text-magenta mb-6">Sobre Mim</h2>
+            <p id="textoSobreMim" class="text-lg leading-relaxed text-gray-300">
+
+Sou Maria Clara Camargos, 22 anos. Atuo como Desenvolvedora Back-end e Designer Gráfica.
+
+Minha Missão: Criar soluções de software inteligentes e eficazes, unindo a excelência técnica com um design atual e de alta estética.
+
+Foco Atual em Design: Trabalho ativamente na criação de conteúdo visual para mídias sociais, como flyers, vídeos e posts estáticos.
+
+Busco aplicar essa dupla especialidade (lógica robusta e visão estética) em projetos que exigem produtos completos e inovadores.
+            </p>
+        </section>
+
+        <!-- SEÇÃO 2: HABILIDADES -->
+        <section id="habilidades" class="content-section glassmorphism p-8 rounded-xl">
+            <h2 class="text-magenta mb-6">Habilidades</h2>
+            
+            <!-- Botões de Filtro -->
+            <div class="flex flex-wrap gap-4 mb-6">
+                <button 
+                    id="btn-all"
+                    onclick="window.filtrarHabilidades('all', this)" 
+                    class="futuristic-button px-4 py-2 rounded active-filter">
+                    <i data-lucide="layers" class="w-4 h-4 inline mr-2"></i> Mostrar Tudo
+                </button>
+                <button 
+                    id="btn-software"
+                    onclick="window.filtrarHabilidades('software', this)" 
+                    class="futuristic-button px-4 py-2 rounded">
+                    <i data-lucide="code" class="w-4 h-4 inline mr-2"></i> Foco em Software
+                </button>
+                <button 
+                    id="btn-design"
+                    onclick="window.filtrarHabilidades('design', this)" 
+                    class="futuristic-button px-4 py-2 rounded">
+                    <i data-lucide="drafting-compass" class="w-4 h-4 inline mr-2"></i> Foco em Design
+                </button>
+            </div>
+
+            <!-- Lista de Habilidades -->
+            <ul id="listaHabilidades" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <li data-category="software" class="p-3 rounded-lg border-2 border-cyan-500/30 transition-all duration-300">JavaScript</li>
+                <li data-category="design" class="p-3 rounded-lg border-2 border-cyan-500/30 transition-all duration-300">Adobe Express</li>
+                <li data-category="software" class="p-3 rounded-lg border-2 border-cyan-500/30 transition-all duration-300">CRM</li> 
+                <li data-category="design" class="p-3 rounded-lg border-2 border-cyan-500/30 transition-all duration-300">Conceitos de Design</li>
+                <li data-category="software" class="p-3 rounded-lg border-2 border-cyan-500/30 transition-all duration-300">GIT E GITHub</li>
+                <li data-category="design" class="p-3 rounded-lg border-2 border-cyan-500/30 transition-all duration-300">Pesquisa de Usuário</li>
+                <li data-category="software" class="p-3 rounded-lg border-2 border-cyan-500/30 transition-all duration-300">Microsoft Tools</li>
+                <li data-category="design" class="p-3 rounded-lg border-2 border-cyan-500/30 transition-all duration-300">Testes de Usabilidade</li>
+            </ul>
+        </section>
+
+        <!-- SEÇÃO 3: PROJETOS -->
+        <section id="projetos" class="content-section glassmorphism p-8 rounded-xl">
+            <h2 class="text-magenta mb-6">Projetos</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                
+                <!-- Projeto 1: Forkly -->
+                <article class="project-card p-6 rounded-xl border border-magenta/50 bg-gray-900/40">
+                    <h3 class="text-2xl font-semibold text-cyan mb-3">Forkly: Sistema de Gerenciamento de Refeições</h3>
+                    <p class="text-gray-400 mb-4">
+                        Plataforma Full Stack para restaurantes, permitindo rastreamento em tempo real de pedidos, gestão de estoque e otimização de fluxo de trabalho.
+                    </p>
+                    <button onclick="window.simularProjeto('Forkly')" class="futuristic-button px-4 py-2 rounded text-sm flex items-center">
+                        <i data-lucide="cpu" class="w-4 h-4 inline mr-2"></i> Simular Transação
+                    </button>
+                </article>
+
+                <!-- Projeto 2: SIS (Sistema Integrado do SUS) -->
+                <article class="project-card p-6 rounded-xl border border-magenta/50 bg-gray-900/40">
+                    <h3 class="text-2xl font-semibold text-cyan mb-3">SIS: Sistema Integrado do SUS</h3>
+                    <p class="text-gray-400 mb-4">
+                    O diferencial do seu SIS é o uso de Inteligência de Dados para transformar o histórico do paciente em uma vantagem diagnóstica e preditiva, garantindo que o cuidado seja personalizado, seguro e baseado na disponibilidade de recursos (como medicamentos).
+                    </p>
+                    <button onclick="window.simularProjeto('SIS')" class="futuristic-button px-4 py-2 rounded text-sm flex items-center">
+                        <i data-lucide="fingerprint" class="w-4 h-4 inline mr-2"></i> Simular Acesso Rápido
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: CONTATO -->
+        <section id="contato" class="content-section glassmorphism p-8 rounded-xl">
+            <h2 class="text-magenta mb-6">Contato</h2>
+            <ul class="space-y-3 text-lg">
+                <li class="flex items-center">
+                    <i data-lucide="mail" class="text-cyan w-5 h-5 mr-3"></i>
+                    Email: <a href="mailto:mariaclaracamargos001@gmail.com" class="ml-2 nav-link">mariaclaracamargos001@gmail.com</a>
+                </li>
+                <li class="flex items-center">
+                    <i data-lucide="phone" class="text-cyan w-5 h-5 mr-3"></i>
+                    Telefone: <a href="tel:+5534998051571" class="ml-2 nav-link">(34) 99805-1571</a>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- FOOTER -->
+        <footer class="text-center p-4 text-gray-500 border-t border-gray-700/50 mt-10">
+            <p>&copy; 2025 Maria Clara Camargos. Todos os direitos reservados.</p>
+        </footer>
+    </main>
+
+    <!-- Link para o arquivo JavaScript (script.js) -->
+    <script src="script.js"></script>
+</body>
+</html>
